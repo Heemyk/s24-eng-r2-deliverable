@@ -71,6 +71,43 @@ export interface Database {
           },
         ];
       };
+      comments: {
+        Row: {
+          author: string | null;
+          commentid: number;
+          species_id: number;
+          time_made: Date | null;
+          other_sugs: string;
+        };
+        Insert: {
+          author: string | null;
+          commentid?: number;
+          species_id: number;
+          time_made?: Date | null;
+          other_sugs?: string;
+        };
+        Update: {
+          author: string | null;
+          commentid?: number;
+          species_id: number;
+          time_made?: Date | null;
+          other_sugs?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "comments_author_fkey";
+            columns: ["author"];
+            referencedRelation: "profiles";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "comments_species_fkey";
+            columns: ["species_id"];
+            referencedRelation: "species";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
     };
     Views: {
       [_ in never]: never;

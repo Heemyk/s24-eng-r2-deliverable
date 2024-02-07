@@ -34,7 +34,8 @@
     "**/*.cjs",
     "**/*.mjs",
     ".eslintrc.cjs",
-    "next.config.js"
+    "next.config.js",
+    "lib/schemaCopy.ts.example"
   ],
   "exclude": ["node_modules"]
 }
